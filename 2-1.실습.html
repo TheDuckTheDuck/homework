@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .width-button{
+            border: 1px solid magenta;
+        }
+    </style>
+</head>
+<body>
+    <!-- 오늘의 실습 및 과제! 
+    밑의 li 를 누르면 그 px로 너비가 변할 수 있게 만들어주세요.  -->
+    <ul>
+        <li class="click-able width-button">100px</li>
+        <li class="click-able width-button">200px</li>
+        <li class="click-able width-button">300px</li>
+    </ul>
+
+    <script>
+        const widthButtons = document.getElementsByClassName('width-button');
+        function changeWidth(widthPick){
+            console.log(widthPick)
+            for(let i=0;i<widthButtons.length;i++){
+                widthButtons[i].style.width = widthPick
+            }
+        }
+
+        widthButtons[0].addEventListener('click',() => {
+            changeWidth('100px')
+        })
+
+        widthButtons[1].addEventListener('click',() => {
+            changeWidth('200px')
+        })
+
+        widthButtons[2].addEventListener('click',() => {
+            changeWidth('300px')
+        })
+        
+    </script>
+</body>
+</html>
